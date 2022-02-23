@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Linkedin Replica</title>
+</head>
+
+<body>
+  <!-- Start of navigation bar -->
+  <div class="header">
+    <div class="header_left">
+      <img src="images/logo_linkedin.png" alt="" />
+      <div class="header_search">
+        <i class="material-icons"> search </i>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="header_right">
+      <div class="headerOption">
+        <i class="material-icons headerOption_icon">home</i>
+        <h3>Home</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption_icon">people</i>
+        <h3>Jobs</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption_icon">message</i>
+        <h3>Messages</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption_icon">notifications</i>
+        <h3>Notifications</h3>
+      </div>
+      <div class="headerOption">
+        <i class="material-icons headerOption_icon">account_box</i>
+        <h3>Me</h3>
+      </div>
+    </div>
+  </div>
+  <!-- End of navigation bar -->
+
+  <!-- Main body starts -->
+  <div class="borderColor">
+    <div class="main_body">
+      <img src="images/bg_photo.png" class="main_body" alt="" />
+    </div>
+    <img src="images/profile-pic.png" class="profile-pic" alt="" />
+    <div class="white_body">
+      <br /><br /><br /><br />
+      <!-- <div class="pencilicon">
+        <i class="material-icons"> edit </i>
+      </div> -->
+      <div class="pad">
+
+        <h3 id="mainName">Name</h3>
+        <br />
+        <p id="attend"></p>
+        <br /><u><i>
+            <p id="email">Email</p>
+          </i></u>
+
+        <br /><button type="button" class="button">Open to</button>
+
+        <button type="button" class="button">Add Section</button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <!-- main body ends -->
+
+  <!-- modal starts -->
+  <i class="material-icons button2" id="modal-btn"> edit </i>
+
+
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <form name="myForm1">
+          <h2>Edit Personal Details</h2>
+          <hr style="opacity: 0.4;">
+          <br />
+          <p style="opacity: 0.5;">First Name*</p>
+          <input style="padding: 0.7rem;  width: 85%;
+          " name="fname" type="text" id="name-first" placeholder="Enter first name" />
+          <br />
+          <br />
+          <p style="opacity: 0.5;">Last Name*</p>
+          <input type="text" style="padding: .7rem;  width: 85%;
+          " name="lname" id="name-last" placeholder="Enter last name" />
+          <br />
+          <br />
+          <p style="opacity: 0.5;">Enter your email-id</p>
+          <input type="text" style="padding: .7rem;  width: 85%;
+          " name="emailname" id="emailId" placeholder="123@gmail.com" />
+          <br />
+          <br />
+
+      </div>
+      <div class="input">
+        <input type="submit" id="submit" style="width: 95%" onClick="onBtnClick(); closeModal(); preventDefault()"
+          value="Submit" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- modal ends -->
+
+  <!-- education section starts -->
+  <div class="main_body_2">
+    <i class="material-icons button2" id="modal-btn-2"> add </i>
+    <br />
+    <h3 class="edu">Education</h3>
+    <hr>
+    <br />
+
+    <div class="container2">
+      <div class="to-dos2" id="todocontainer2"></div>
+    </div>
+  </div>
+  <!-- education section 2 ends -->
+
+  <!-- Modal 2 starts  -->
+
+  <div id="my-modal-2" class="modal-2">
+    <div class="modal-content-2">
+      <div class="modal-header">
+        <span class="close-2">&times;</span>
+        <h2>Edit College Details</h2>
+        <hr>
+      </div>
+      <br>
+      <form name="myForm2">
+        <p style="opacity: 0.5;">Name of Institution</p>
+        <input type="text" style="padding: .7rem;" id="nameInsti">
+        <br>
+        <br>
+        <p style="opacity: 0.5;">Type of Degree</p>
+
+        <input type="text" style="padding: .7rem; width: 85%;" id="nameofdegree">
+        <br>
+        <br>
+        <p style="opacity: 0.5;">Field of Study</p>
+
+        <input type="text" style="padding: .7rem;  width: 85%;
+        " id="nameoffield">
+        <br>
+      </form>
+
+
+      <div class="input">
+        <input type="submit" id="submit" style="width: 95%" onClick="editEducation(); closeModal2()" value="Submit" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 ends -->
+
+  <!-- Skills section  starts-->
+  <div class="main_body_3">
+    <br />
+    <h3 class="edu">Skills and Endorsement's</h3>
+    <hr />
+
+    <i class="material-icons button2" id="modal-btn-3"> add </i>
+    <ul>
+      <li class="skills" id="skills1">Skills</li>
+      <br>
+      <div class="container">
+        <div class="to-dos" id="toDoContainer"> </div>
+      </div>
+    </ul>
+  </div>
+  <!-- Skills section ends -->
+
+  <!-- Modal for skill section starts -->
+  <div>
+    <div id="my-modal-3" class="modal-3">
+      <div class="modal-content-3">
+        <div class="modal-header">
+          <span class="close-3">&times;</span>
+
+          <h3>Edit Skill Section</h3>
+          <br />
+          <hr>
+          <!-- <br>
+          <p style="opacity: 0.5;">Enter Skill*</p>
+          <form name="myForm3">
+            <input type="text" style="padding: .7rem;  width: 85%;
+            " id="skill1" placeholder="Ex. Marathon,Athletics" />
+            <br>
+            <br> -->
+          <p style="opacity: 0.5;">Add skills</p>
+          <!-- The adding section starts -->
+          <div class="container">
+            <input id="inputField" style="width: 85%; padding: 0.7rem;" type="text">
+            </form>
+          </div>
+
+          <!-- The adding section ends -->
+        </div>
+        <div class="input">
+          <input type="submit" id="submit" style="width: 95%;" onClick="onBtnClick3(); editSkills();closeModal3()"
+            value="Submit" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employment section starts -->
+  <div class="main_body_4">
+
+    <i class="material-icons button2" id="modal-btn-4"> add </i>
+    <h3 class="employment">Employment and Experiences</h3>
+
+    <hr />
+    <br />
+    <div class="detailsOfEmployment">
+      <div class="to-dos3" id="toDoContainer3"></div>
+    </div>
+  </div>
+  <!-- employment section ends-->
+
+  <!-- modal for experince starts -->
+  <div id="my-modal-4" class="modal-4">
+    <div class="modal-content-4">
+      <div class="modal-header">
+        <span class="close-4">&times;</span>
+        <h2>Edit College Details</h2>
+        <br>
+        <hr>
+
+      </div>
+      <br>
+      <form name="myForm4">
+        <p style="opacity: 0.5;">Name of Company</p>
+
+        <input type="text" style="padding: .7rem;  width: 85%;
+        " id="nameCompany">
+        <br>
+        <br>
+        <p style="opacity: 0.5;">Title of Job</p>
+
+        <input type="text" style="padding: .7rem;  width: 85%;
+        " id="nameofjob">
+        <br>
+        <br>
+        <p style="opacity: 0.5;">Duration</p>
+
+        <input type="text" style="padding: .7rem;  width: 85%;
+        " id="nameofdur">
+        <br>
+      </form>
+
+
+      <div class="input">
+        <input type="submit" id="submit" style="width: 95%" onClick="editExperince(); closeModal4()" value="Submit" />
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- modal for experince ends -->
+
+
+
+
+  <!-- script for first modal -->
+  <script>
+    const modal = document.querySelector("#my-modal");
+    const modalBtn = document.querySelector("#modal-btn");
+    const closeBtn = document.querySelector(".close");
+    // Events
+    modalBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    window.addEventListener("click", outsideClick);
+
+    // Script for second modal
+    // Get DOM Elements
+    const modal2 = document.querySelector('#my-modal-2');
+    const modalBtn2 = document.querySelector('#modal-btn-2');
+    const closeBtn2 = document.querySelector('.close-2');
+
+    // Events
+    modalBtn2.addEventListener('click', openModal2);
+    closeBtn2.addEventListener('click', closeModal2);
+    window.addEventListener('click', outsideClick);
+
+    // script for fourth modal
+    const modal4 = document.querySelector('#my-modal-4');
+    const modalBtn4 = document.querySelector('#modal-btn-4');
+    const closeBtn4 = document.querySelector('.close-4');
+
+    // Events
+    modalBtn4.addEventListener('click', openModal4);
+    closeBtn4.addEventListener('click', closeModal4);
+    window.addEventListener('click', outsideClick);
+
+    // Open
+    function openModal2() {
+      modal.style.display = 'block';
+    }
+
+    // Close
+    function closeModal2() {
+      modal.style.display = 'none';
+    }
+    // script for third modal
+    const modal3 = document.querySelector('#my-modal-3');
+    const modalBtn3 = document.querySelector('#modal-btn-3');
+    const closeBtn3 = document.querySelector('.close-3');
+
+    // Events
+    modalBtn3.addEventListener('click', openModal3);
+    closeBtn3.addEventListener('click', closeModal3);
+    window.addEventListener('click', outsideClick);
+
+    // Open
+    function openModal3() {
+      modal.style.display = 'block';
+    }
+
+    // Close
+    function closeModal3() {
+      modal.style.display = 'none';
+    }
+
+
+    // Close If Outside Click
+    function outsideClick(e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // editing the details
+    function onBtnClick() {
+
+      let x = document.forms["myForm1"]["name-first"].value;
+      if (x == "") {
+        alert("First Name must be filled out");
+        return false;
+      }
+      let x1 = document.forms["myForm1"]["lname"].value;
+      if (x1 == "") {
+        alert("Last Name must be filled out");
+        return false;
+      }
+      let x2 = document.forms["myForm1"]["emailname"].value;
+      if (x2 == "") {
+        alert("Email must be filled out");
+        return false;
+      }
+
+      document.getElementById("mainName").innerHTML =
+        document.getElementById("name-first").value +
+        " " +
+        document.getElementById("name-last").value;
+      // to change email
+      document.getElementById("email").innerHTML = "Email- " +
+        document.getElementById("emailId").value;
+
+
+
+    }
+    function onBtnClick2() {
+      let x = document.forms["myForm2"]["nameInsti"].value;
+      if (x == "") {
+        alert(" Name of Institution must be filled out");
+        return false;
+      }
+      let x1 = document.forms["myForm2"]["nameofdegree"].value;
+      if (x1 == "") {
+        alert("Name of Degree must be filled out");
+        return false;
+      }
+      let x2 = document.forms["myForm2"]["nameoffield"].value;
+      if (x2 == "") {
+        alert("Name of field must be filled out");
+        return false;
+      }
+      // to change school name
+      document.getElementById("education").innerHTML =
+        document.getElementById("name-school").value;
+      // to change degree
+      document.getElementById("degree_name").innerHTML =
+        document.getElementById("degree").value;
+      // to change field of study
+      document.getElementById("field_of_study").innerHTML =
+        document.getElementById("fieldOfStudy").value;
+
+    }
+    function onBtnClick3() {
+      document.getElementById("skills1").innerHTML =
+        document.getElementById("skill1").value;
+
+    }
+
+    // Open
+    function openModal() {
+      modal.style.display = "block";
+    }
+    // Close
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Close If Outside Click
+    function outsideClick(e) {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // Open2
+    function openModal2() {
+      modal2.style.display = "block";
+    }
+    // Close2
+    function closeModal2() {
+      modal2.style.display = "none";
+    }
+
+    // Open3
+    function openModal3() {
+      modal3.style.display = "block";
+    }
+    // Close3
+    function closeModal3() {
+      modal3.style.display = "none";
+    }
+
+    function openModal4() {
+      modal4.style.display = "block";
+    }
+    // Close3
+    function closeModal4() {
+      modal4.style.display = "none";
+    }
+
+    // script for adding of skills
+
+    // let addToDoButton = document.getElementById('addToDo');
+    let toDoContainer = document.getElementById('toDoContainer');
+    let inputField = document.getElementById('inputField');
+
+    // addToDoButton.addEventListener('click');
+    function editSkills() {
+
+      let x = document.forms["myForm3"]["inputField"].value;
+      if (x == "") {
+        alert("Skill must be filled out");
+        return false;
+      }
+
+      var li = document.createElement('li');
+      // var br = document.createElement("br");
+      // var hr = document.createElement("hr");
+      li.classList.add('li-styling');
+      li.innerText = inputField.value;
+      toDoContainer.appendChild(li);
+      // toDoContainer.appendChild(br);
+      // toDoContainer.appendChild(hr);
+      // toDoContainer.appendChild(br);
+
+      inputField.value = "";
+      li.addEventListener('dblclick', function () {
+        toDoContainer.removeChild(li);
+      })
+    }
+
+
+    // script for adding college details
+    // let addToDoButton2 = document.getElementById('addToDo2');
+
+    let todocontainer2 = document.getElementById('todocontainer2');
+    let nmInsti = document.getElementById('nameInsti');
+    let nameofdegree = document.getElementById('nameofdegree')
+    let nameoffield = document.getElementById('nameoffield');
+
+    function editEducation() {
+      var h4 = document.createElement('h4');
+      var p = document.createElement('p');
+      var p2 = document.createElement('p');
+      var br = document.createElement('br');
+
+      // To give alert when empty string is passed
+      let x = document.forms["myForm2"]["nameInsti"].value;
+      if (x == "") {
+        alert(" Name of Institution must be filled out");
+        return false;
+      }
+      let x1 = document.forms["myForm2"]["nameofdegree"].value;
+      if (x1 == "") {
+        alert("Name of Degree must be filled out");
+        return false;
+      }
+      let x2 = document.forms["myForm2"]["nameoffield"].value;
+      if (x2 == "") {
+        alert("Name of field must be filled out");
+        return false;
+      }
+
+      h4.innerText = nmInsti.value;
+      todocontainer2.appendChild(h4);
+
+      p.innerText = nameofdegree.value;
+      todocontainer2.appendChild(p);
+
+      p2.innerText = nameoffield.value;
+      todocontainer2.appendChild(p2) +
+        todocontainer2.appendChild(br) +
+        todocontainer2.appendChild(br);
+
+
+      nameInsti.value = "";
+      nameofdegree.value = "";
+      nameoffield.value = "";
+
+      h4.classList.add('li2-styling');
+      p.classList.add('li2-styling');
+      p2.classList.add('li2-styling');
+
+
+
+      h4.addEventListener('dblclick', function () {
+        todocontainer2.removeChild(h4);
+        todocontainer2.removeChild(p);
+        todocontainer2.removeChild(p2);
+
+      })
+      p.addEventListener('dblclick', function () {
+        todocontainer2.removeChild(h4);
+        todocontainer2.removeChild(p);
+        todocontainer2.removeChild(p2);
+
+      })
+      p2.addEventListener('dblclick', function () {
+        todocontainer2.removeChild(h4);
+        todocontainer2.removeChild(p);
+        todocontainer2.removeChild(p2);
+
+      })
+    }
+
+    function editExperince() {
+      var h4 = document.createElement('h4');
+      var p = document.createElement('p');
+      var p2 = document.createElement('p')
+      var br = document.createElement('br');
+
+      // To give alert when empty string is passed
+      let x = document.forms["myForm4"]["nameCompany"].value;
+      if (x == "") {
+        alert(" Name of Company must be filled out");
+        return false;
+      }
+      let x1 = document.forms["myForm4"]["nameofjob"].value;
+      if (x1 == "") {
+        alert("Type of position must be filled out");
+        return false;
+      }
+      let x2 = document.forms["myForm4"]["nameofdur"].value;
+      if (x2 == "") {
+        alert("Duration must be filled out");
+        return false;
+      }
+
+      h4.innerText = nameCompany.value;
+      toDoContainer3.appendChild(h4);
+
+      p.innerText = nameofjob.value;
+      toDoContainer3.appendChild(p);
+
+      p2.innerText = nameofdur.value;
+      toDoContainer3.appendChild(p2) +
+        toDoContainer3.appendChild(br) +
+        toDoContainer3.appendChild(br);
+
+
+      nameCompany.value = "";
+      nameofjob.value = "";
+      nameofdur.value = "";
+
+      h4.classList.add('li2-styling');
+      p.classList.add('li2-styling');
+      p2.classList.add('li2-styling');
+
+
+
+      h4.addEventListener('dblclick', function () {
+        toDoContainer3.removeChild(h4);
+        toDoContainer3.removeChild(p);
+        toDoContainer3.removeChild(p2);
+
+      })
+      p.addEventListener('dblclick', function () {
+        toDoContainer3.removeChild(h4);
+        toDoContainer3.removeChild(p);
+        toDoContainer3.removeChild(p2);
+
+      })
+      p2.addEventListener('dblclick', function () {
+        toDoContainer3.removeChild(h4);
+        toDoContainer3.removeChild(p);
+        toDoContainer3.removeChild(p2);
+
+      })
+    }
+    //  To prevent default
+
+
+    submit.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+
+
+
+  </script>
+
+</body>
+<footer>
+  <fieldset style="padding:1rem ; margin-top: 2rem;">
+    <p>Double click to delete an item or info</p>
+  </fieldset>
+</footer>
+
+</html>
